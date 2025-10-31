@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercado Secundário | CryptoEstate</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="light">
+    <header class="topbar white">
+      <div class="logo">CryptoEstate</div>
+      <nav class="nav">
+        <a href="index.html">Início</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="mercado.html" class="active">Mercado Secundário</a>
+        <a href="como-funciona.html">Como Funciona</a>
+        <a href="contactos.html">Contactos</a>
+      </nav>
+      <div class="actions">
+        <button class="btn-wallet" id="btnWallet">🔗 Ligar carteira</button>
+        <button id="btnTheme" class="btn-round">🌓</button>
+      </div>
+    </header>
+
+    <main class="page">
+      <h1>Mercado secundário</h1>
+      <p class="muted">vende os tokens que recebeste quando investiste num certo projeto.</p>
+
+      <div class="market-layout">
+        <div class="table-like" id="mercadoLista"></div>
+        <div class="chart-box">
+          <h2>Evolução preço — token selecionado</h2>
+          <canvas id="graficoMercado" width="400" height="230"></canvas>
+          <p class="muted mini">dados simulados só para mostrar 😎</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer white">
+      <p>© 2025 CryptoEstate</p>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

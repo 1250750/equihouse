@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contactos | CryptoEstate</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="logo">CryptoEstate</div>
+      <nav class="nav">
+        <a href="index.html">Início</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="mercado.html">Mercado Secundário</a>
+        <a href="como-funciona.html">Como Funciona</a>
+        <a href="contactos.html" class="active">Contactos</a>
+      </nav>
+      <button id="btnTheme" class="btn">🌙</button>
+    </header>
+
+    <main class="page narrow">
+      <h1>Fala connosco</h1>
+      <form class="form" id="formContactos">
+        <label>Nome
+          <input type="text" name="nome" required />
+        </label>
+        <label>Email
+          <input type="email" name="email" required />
+        </label>
+        <label>Mensagem
+          <textarea name="mensagem" rows="5" required></textarea>
+        </label>
+        <button class="btn primary" type="submit">Enviar</button>
+      </form>
+      <p id="msgOk" class="ok" hidden>recebido. não vamos responder 🤭</p>
+    </main>
+
+    <footer class="footer">
+      <p>© 2025 CryptoEstate</p>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
