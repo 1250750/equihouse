@@ -6,19 +6,33 @@
     <title>Mercado Secundário | CryptoEstate</title>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body class="light">
-    <header class="topbar white">
-      <div class="logo">CryptoEstate</div>
+  <body class="dark">
+    <!-- glows do tema -->
+    <div class="page-glow page-glow-1"></div>
+    <div class="page-glow page-glow-2"></div>
+
+    <header class="topbar">
+      <div class="logo-wrap">
+        <div class="logo-dot"></div>
+        <div class="logo-text">CryptoEstate</div>
+      </div>
+
       <nav class="nav">
         <a href="index.html">Início</a>
-        <a href="projetos.html">Projetos</a>
-        <a href="mercado.html" class="active">Mercado Secundário</a>
+        <a href="projetos.html" class="active">Projetos</a>
+        <a href="mercado.html">Mercado Secundário</a>
         <a href="como-funciona.html">Como Funciona</a>
         <a href="contactos.html">Contactos</a>
       </nav>
+
       <div class="actions">
-        <button class="btn-wallet" id="btnWallet">🔗 Ligar carteira</button>
-        <button id="btnTheme" class="btn-round">🌓</button>
+        <button class="ghost-btn" id="btnTheme" aria-label="Trocar tema">
+          <span class="dot"></span>
+        </button>
+        <button class="primary-btn" id="btnWallet">
+          <span class="icon">⬤</span>
+          Ligar carteira
+        </button>
       </div>
     </header>
 
@@ -53,5 +67,6 @@
     </footer>
 
     <script src="assets/js/app.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
