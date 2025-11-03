@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praça Armando Pimentel, Porto PT (II) | CryptoEstate</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="light">
+    <!-- topo igual ao resto do site -->
+    <header class="topbar white">
+      <div class="logo">CryptoEstate</div>
+      <nav class="nav">
+        <a href="index.html">Início</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="mercado.html">Mercado Secundário</a>
+        <a href="como-funciona.html">Como Funciona</a>
+        <a href="contactos.html">Contactos</a>
+      </nav>
+      <div class="actions">
+        <button class="btn-wallet" id="btnWallet">🔗 Ligar carteira</button>
+        <button id="btnTheme" class="btn-round">🌓</button>
+      </div>
+    </header>
+
+    <main class="page property-page">
+      <!-- breadcrumb suave -->
+      <p class="muted" style="margin-bottom:0.8rem;">
+        <a href="projetos.html" class="link">← Voltar aos projetos</a>
+      </p>
+
+      <div class="property-header">
+        <h1>Praça Armando Pimentel, Porto PT (II)</h1>
+        <p class="muted">Imóvel residencial • Porto, Portugal</p>
+      </div>
+
+      <div class="property-layout">
+        <!-- COLUNA ESQUERDA -->
+        <div class="property-main">
+          <!-- imagem / galeria simples -->
+          <div class="property-gallery">
+            <img
+              src="https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=1100"
+              alt="Praça Armando Pimentel, Porto"
+            />
+            <div class="thumbs">
+              <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=500" alt="Entrada" />
+              <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=500" alt="Zona envolvente" />
+              <img src="https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=500" alt="Fachada" />
+            </div>
+          </div>
+
+          <!-- separador info -->
+          <section class="card property-section">
+            <h2>Descrição do projeto</h2>
+            <p>
+              Este projeto corresponde à segunda ronda de captação para o imóvel localizado na Praça Armando Pimentel,
+              Porto. O objetivo é financiar trabalhos complementares e otimização do ativo.
+            </p>
+            <p>
+              O investimento é feito através de <strong>tokens do projeto</strong> — neste caso o token
+              <code>PAP-PT2</code>. Cada token representa uma fração económica deste ativo específico. Não estás a
+              comprar “tokens genéricos” da plataforma, mas sim <strong>deste edifício</strong>.
+            </p>
+            <p>
+              O projeto original na Crowdestate foi financiado com uma taxa de <strong>12% ao ano</strong> e obteve
+              <strong>104 investidores</strong>, levantando <strong>26 600 €</strong>, valor que assumimos aqui como
+              histórico para efeitos de transparência. :contentReference[oaicite:1]{index=1}
+            </p>
+          </section>
+
+          <!-- secção tokenização -->
+          <section class="card property-section">
+            <h2>Tokenização e transparência</h2>
+            <ul class="list-clean">
+              <li>🧱 Token do ativo: <strong>PAP-PT2</strong></li>
+              <li>🔐 Contrato registado em blockchain para prova de propriedade económica</li>
+              <li>🪙 Pagamento possível em EUR / USDT (ETH/BTC facultativo)</li>
+              <li>🔁 Estes tokens podem ser revendidos no <a href="mercado.html" class="link">mercado secundário</a></li>
+            </ul>
+            <p class="muted mini">
+              a ideia é: investes ➜ recebes PAP-PT2 ➜ mais tarde podes pôr à venda ➜ histórico fica na rede
+            </p>
+          </section>
+
+          <!-- tabela de dados -->
+          <section class="card property-section">
+            <h2>Dados do investimento</h2>
+            <div class="property-grid-2">
+              <div>
+                <p class="label">Taxa alvo</p>
+                <p class="big">12% p.a.</p>
+              </div>
+              <div>
+                <p class="label">Investidores</p>
+                <p class="big">104</p>
+              </div>
+              <div>
+                <p class="label">Levantado</p>
+                <p class="big">26 600 €</p>
+              </div>
+              <div>
+                <p class="label">Estado</p>
+                <p><span class="status success">Financiado</span></p>
+              </div>
+            </div>
+          </section>
+
+          <!-- gráfico mini de histórico de tokens desta propriedade -->
+          <section class="card property-section">
+            <h2>Histórico de transações do token PAP-PT2</h2>
+            <canvas id="graficoPropriedade" width="450" height="180"></canvas>
+            <p class="muted mini">dados simulados só para mostrar a integração no teu layout</p>
+          </section>
+        </div>
+
+        <!-- COLUNA DIREITA -->
+        <aside class="property-sidebar">
+          <div class="card invest-card">
+            <h3>Investir nesta propriedade</h3>
+            <p class="muted mini">token do projeto: PAP-PT2</p>
+            <p class="label">Preço por token</p>
+            <p class="big">100 €</p>
+
+            <label class="muted mini" for="qtdTokens">quantidade de tokens</label>
+            <input type="number" id="qtdTokens" min="1" value="3" class="input" />
+
+            <p class="muted mini" id="totalInvest">Total: 300 €</p>
+
+            <button class="btn primary" onclick="investirPropriedade('PAP-PT2')">
+              Comprar tokens PAP-PT2
+            </button>
+            <p class="muted mini">
+              os tokens vão para a tua conta e ficam visíveis no mercado secundário
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Resumo</h3>
+            <p class="muted mini">Praça Armando Pimentel, Porto PT (II)</p>
+            <ul class="list-clean">
+              <li>📍 Porto, Portugal</li>
+              <li>🏗️ Reabilitação / complemento</li>
+              <li>🕒 Horizonte: 12-24 meses</li>
+              <li>📄 Documentação legal disponível</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="footer white">
+      <p>© 2025 CryptoEstate. Demo. Não é uma oferta real.</p>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+    <script>
+      // atualiza total do lado direito
+      const qtd = document.getElementById('qtdTokens');
+      const totalInvest = document.getElementById('totalInvest');
+      if (qtd && totalInvest) {
+        qtd.addEventListener('input', () => {
+          const v = Number(qtd.value || 0);
+          const total = v * 100;
+          totalInvest.textContent = 'Total: ' + total.toLocaleString('pt-PT') + ' €';
+        });
+      }
+
+      // gráfico pequenino desta propriedade
+      const canvas = document.getElementById('graficoPropriedade');
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        // eixos
+        ctx.strokeStyle = '#e5e7eb';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(30, 10);
+        ctx.lineTo(30, 160);
+        ctx.lineTo(430, 160);
+        ctx.stroke();
+
+        // dados fake do token PAP-PT2
+        const pontos = [100, 100, 101, 101, 102, 101, 103];
+        ctx.strokeStyle = '#2563eb';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        pontos.forEach((val, i) => {
+          const x = 40 + i * 50;
+          const y = 160 - (val - 100) * 10;
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+
+        ctx.fillStyle = '#0f172a';
+        ctx.font = '12px system-ui';
+        ctx.fillText('Preço historico do token PAP-PT2', 32, 22);
+      }
+
+      function investirPropriedade(token) {
+        alert('compra simulada de tokens do ativo ' + token + ' ✅');
+      }
+    </script>
+  </body>
+</html>

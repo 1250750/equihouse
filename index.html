@@ -3,115 +3,163 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CryptoEstate - Crowdfunding Imobiliário em Tokens</title>
+    <title>EquiHouse — Investir em imobiliário, versão bonita</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- montserrat + inter, estilo framer -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
   </head>
-  <body class="light">
-    <header class="topbar white">
-      <div class="logo">EquiHouse</div>
+  <body class="dark">
+    <!-- background glow -->
+    <div class="page-glow page-glow-1"></div>
+    <div class="page-glow page-glow-2"></div>
+
+    <header class="topbar">
+      <div class="logo-wrap">
+        <div class="logo-dot"></div>
+        <div class="logo-text">EquiHouse</div>
+      </div>
+
       <nav class="nav">
         <a href="index.html" class="active">Início</a>
-        <a href="projetos.html">Projetos</a>
-        <a href="mercado.html">Mercado Secundário</a>
-        <a href="como-funciona.html">Como Funciona</a>
+        <a href="projetos.html">Investir</a>
+        <a href="como-funciona.html">Sobre</a>
         <a href="contactos.html">Contactos</a>
       </nav>
-      <div class="actions">
-        <!--<button class="btn-wallet" id="btnWallet">🔗 Ligar carteira</button>-->
-       <button class="button x">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="48"
-    viewBox="0 0 48 48"
-    height="48"
-  >
-    <path fill="none" d="M0 0h48v48H0z"></path>
-    <path
-      d="M42 36v2c0 2.21-1.79 4-4 4H10c-2.21 0-4-1.79-4-4V10c0-2.21 1.79-4 4-4h28c2.21 0 4 1.79 4 4v2H24c-2.21 0-4 1.79-4 4v16c0 2.21 1.79 4 4 4h18zm-18-4h20V16H24v16zm8-5c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"
-    ></path>
-  </svg>
-  Connect Wallet
-</button>
 
+      <div class="actions">
+        <button class="ghost-btn" id="modeToggle" aria-label="Trocar tema">
+          <span class="dot"></span>
+        </button>
+        <button class="primary-btn">
+          <span class="icon">⬤</span>
+          Connect Wallet
+        </button>
       </div>
     </header>
 
-    <main class="hero white-mode">
-      <section class="hero-text">
-        <p class="pill">Crowdfunding imobiliário com tokens de projeto</p>
-        <h1>Investe em imóveis, recebe tokens e vende quando quiseres.</h1>
-        <p>
-          Cada edifício é tokenizado individualmente. Se investires no Edifício 1,
-          recebes <strong>tokens do Edifício 1</strong> (ex: <code>ED1</code>) e esses são
-          os que podes vender no mercado secundário. Tudo registado em blockchain.
+    <main class="hero-wrap">
+      <section class="hero">
+        <p class="tag">Crowdfunding imobiliário • Tokens por ativo</p>
+        <h1>Investe em imóveis tokenizados com liquidez quase instantânea.</h1>
+        <p class="subtitle">
+          Cada projeto é independente. Investes num edifício, recebes o token desse edifício. Transparência de fluxo, rendimentos on-chain, e um UI que não parece de 2009.
         </p>
         <div class="hero-buttons">
-          <a class="btn primary" href="projetos.html">Ver projetos</a>
-          <a class="btn ghost" href="mercado.html">Ver mercado</a>
+          <a class="btn-solid" href="projetos.html">Ver projetos</a>
+          <a class="btn-ghost" href="mercado.html">Mercado secundário</a>
         </div>
-        <p class="muted">Pagas em EUR ou USDT. ETH/BTC opcional.</p>
+        <div class="hero-metrics">
+          <div class="metric">
+            <span class="metric-label">Volume hoje</span>
+            <span class="metric-value">€ 43 200</span>
+            <span class="metric-sub">+12% face a ontem</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Investidores ativos</span>
+            <span class="metric-value">1 284</span>
+            <span class="metric-sub">em 3 países</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Projetos financiados</span>
+            <span class="metric-value green">27</span>
+            <span class="metric-sub">nenhum calote (ainda)</span>
+          </div>
+        </div>
       </section>
-      <section class="hero-media">
-        <img
-          src="https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=1000"
-          alt="Empreendimento imobiliário"
-          class="hero-img"
-        />
-        <div class="hero-card small">
-          <p class="label">Tokens negociados hoje</p>
-          <p class="big">4 320 <span>tokens</span></p>
-          <p class="muted">Mercado secundário ativo</p>
+
+      <section class="hero-panel">
+        <div class="panel-card panel-main">
+          <div class="panel-header">
+            <span class="panel-title">Projetos a financiar</span>
+            <span class="panel-badge">tempo real</span>
+          </div>
+
+          <div class="offer">
+            <div class="offer-top">
+              <div>
+                <p class="offer-name">Residencial Parque, Lisboa</p>
+                <p class="offer-rate">11,2% ao ano</p>
+              </div>
+              <span class="offer-status blue">A financiar</span>
+            </div>
+            <p class="offer-meta">143 investidores • 39 900€</p>
+            <div class="progress">
+              <div class="progress-bar" style="width: 82%;"></div>
+            </div>
+            <p class="progress-text">82% financiado</p>
+            <img src="https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=600" alt="Residencial Parque" class="offer-thumb">
+          </div>
+
+          <div class="offer">
+            <div class="offer-top">
+              <div>
+                <p class="offer-name">Praça Armando Pimentel, Porto (II)</p>
+                <p class="offer-rate">12% ao ano</p>
+              </div>
+              <span class="offer-status red">Financiado</span>
+            </div>
+            <p class="offer-meta">104 investidores • 26 600€</p>
+            <div class="progress">
+              <div class="progress-bar done"></div>
+            </div>
+            <p class="progress-text">100% financiado</p>
+            <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=600" alt="Praça Armando Pimentel" class="offer-thumb">
+          </div>
+
+          <div class="offer">
+            <div class="offer-top">
+              <div>
+                <p class="offer-name">Rua da Portela, Nogueira (VII)</p>
+                <p class="offer-rate">11,5% ao ano</p>
+              </div>
+              <span class="offer-status red">Financiado</span>
+            </div>
+            <p class="offer-meta">206 investidores • 51 300€</p>
+            <div class="progress">
+              <div class="progress-bar done"></div>
+            </div>
+            <p class="progress-text">100% financiado</p>
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=600" alt="Rua da Portela" class="offer-thumb">
+          </div>
+        </div>
+
+        <div class="panel-card panel-secondary">
+          <p class="panel-label">Tokens negociados hoje</p>
+          <h2 class="panel-number">4 320 <span>tokens</span></h2>
+          <p class="panel-sub">mercado secundário ativo</p>
+          <button class="panel-btn">Ver livro de ordens →</button>
         </div>
       </section>
     </main>
 
-    <section class="section-light">
-      <h2>Ativos disponíveis</h2>
-      <p class="muted">
-        Transparência por ativo: cada projeto tem o seu contrato/token. Não misturas edifícios.
-      </p>
-      <div class="cards-inline">
-        <article class="asset-card">
-          <img
-            src="https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=600"
-            alt="Edifício 1"
-          />
-          <div class="body">
-            <h3>Edifício Riverside, Porto</h3>
-            <p>Token do projeto: <strong>ED1</strong></p>
-            <p>Preço atual do token: <strong>100 €</strong></p>
-            <a href="projetos.html" class="link">Investir neste ativo →</a>
-          </div>
+    <section class="grid-section">
+      <h2>Porquê tokenizar o imobiliário?</h2>
+      <p class="grid-desc">É a mesma lógica da Framer: pega numa coisa chata e mete-lhe UI. Aqui pegamos em imobiliário e damos-lhe liquidez.</p>
+
+      <div class="grid-cards">
+        <article class="grid-card">
+          <h3>Tokens por ativo</h3>
+          <p>Cada edifício tem o seu token (ED1, LS2, BRG3...). Não misturas rendimentos.</p>
         </article>
-        <article class="asset-card">
-          <img
-            src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=600"
-            alt="Edifício 2"
-          />
-          <div class="body">
-            <h3>Residência Santos, Lisboa</h3>
-            <p>Token do projeto: <strong>LS2</strong></p>
-            <p>Preço atual do token: <strong>250 €</strong></p>
-            <a href="projetos.html" class="link">Ver documentação →</a>
-          </div>
+        <article class="grid-card">
+          <h3>Mercado secundário</h3>
+          <p>Podes vender o teu token sem esperar pelo fim do projeto.</p>
         </article>
-        <article class="asset-card">
-          <img
-            src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=600"
-            alt="Edifício 3"
-          />
-          <div class="body">
-            <h3>Alojamento Estudantil, Braga</h3>
-            <p>Token do projeto: <strong>BRG3</strong></p>
-            <p>Preço atual do token: <strong>75 €</strong></p>
-            <a href="projetos.html" class="link">Ver rendas previstas →</a>
-          </div>
+        <article class="grid-card">
+          <h3>Blockchain</h3>
+          <p>Registo transparente. mais cenas</p>
+        </article>
+        <article class="grid-card">
+          <h3>Pagas em EUR</h3>
+          <p>Ou USDT. ETH/BTC </p>
         </article>
       </div>
     </section>
 
-    <footer class="footer white">
-      <p>© 2025 CryptoEstate. Demo front-end.</p>
+    <footer class="footer">
+      <p>© 2025 EquiHouse. por mais cenas</p>
     </footer>
 
     <script src="assets/js/app.js"></script>

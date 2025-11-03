@@ -3,12 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projetos | CryptoEstate</title>
+    <title>Propriedades | CryptoEstate</title>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body class="light">
-    <header class="topbar white">
-      <div class="logo">CryptoEstate</div>
+  <body class="dark">
+    <!-- glows do tema -->
+    <div class="page-glow page-glow-1"></div>
+    <div class="page-glow page-glow-2"></div>
+
+    <header class="topbar">
+      <div class="logo-wrap">
+        <div class="logo-dot"></div>
+        <div class="logo-text">CryptoEstate</div>
+      </div>
+
       <nav class="nav">
         <a href="index.html">Início</a>
         <a href="projetos.html" class="active">Projetos</a>
@@ -16,24 +24,36 @@
         <a href="como-funciona.html">Como Funciona</a>
         <a href="contactos.html">Contactos</a>
       </nav>
+
       <div class="actions">
-        <button class="btn-wallet" id="btnWallet">🔗 Ligar carteira</button>
-        <button id="btnTheme" class="btn-round">🌓</button>
+        <button class="ghost-btn" id="btnTheme" aria-label="Trocar tema">
+          <span class="dot"></span>
+        </button>
+        <button class="primary-btn" id="btnWallet">
+          <span class="icon">⬤</span>
+          Ligar carteira
+        </button>
       </div>
     </header>
 
     <main class="page">
-      <h1>Projetos em captação</h1>
-      <p class="muted">
-        compra tokens do projeto. cada token representa uma fração do imóvel.
-      </p>
-      <div class="grid cards" id="listaProjetos"></div>
+      <section class="page-head">
+        <h1>Propriedades tokenizadas</h1>
+        <p class="muted">
+          escolhe um projeto para ver documentação, token do projeto e entrar no mercado secundário.
+        </p>
+      </section>
+
+      <section id="offersGrid" class="offers-grid"></section>
     </main>
 
-    <footer class="footer white">
-      <p>© 2025 CryptoEstate</p>
+    <footer class="footer">
+      <p>© <span id="year">2025</span> CryptoEstate</p>
     </footer>
 
+    <!-- o teu js base -->
     <script src="assets/js/app.js"></script>
+    <!-- script desta página -->
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
