@@ -1,0 +1,147 @@
+/* ——— escopo Mercado ——— */
+#mercadoPage {
+  --radius: 14px;
+  --stroke: rgba(255,255,255,0.06);
+  --surface: rgba(3,7,18,0.28);
+  --muted: rgba(255,255,255,0.6);
+  --shadow: 0 10px 30px rgba(0,0,0,0.22);
+}
+
+/* estrutura base */
+#mercadoPage .page-head h1 {
+  margin: 0 0 6px;
+  letter-spacing: -0.02em;
+}
+#mercadoPage .block { margin-top: 18px; }
+
+/* barra fixa compacta com carteira + filtros */
+#mercadoPage .sticky-bar {
+  position: sticky; top: 64px; z-index: 10;
+  display: grid; gap: 10px;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 10px;
+  background: rgba(3,7,18,0.3);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  backdrop-filter: blur(14px);
+}
+@media (max-width: 900px){
+  #mercadoPage .sticky-bar { grid-template-columns: 1fr; gap: 8px; }
+}
+
+#mercadoPage .wallet-mini {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+}
+#mercadoPage .wallet-mini .label { font-size: .75rem; color: var(--muted); margin-right: 8px; }
+#mercadoPage .wallet-mini .value { font-weight: 600; letter-spacing: .02em; }
+#mercadoPage .wallet-quick { display: flex; gap: 8px; }
+
+#mercadoPage .filters { display: flex; gap: 8px; }
+#mercadoPage .input {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 8px 10px;
+  color: #fff;
+  min-width: 210px;
+}
+@media (max-width: 520px){
+  #mercadoPage .filters { flex-direction: column; }
+  #mercadoPage .input { width: 100%; min-width: 0; }
+}
+
+/* cartões leves para holdings e ordens */
+#mercadoPage .card-list .table {
+  width: 100%;
+}
+#mercadoPage .card-list .row {
+  display: grid;
+  grid-template-columns: 1.3fr repeat(3, auto);
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+#mercadoPage .card-list .row.header { display: none; } /* tiramos cabeçalho pesado */
+
+#mercadoPage .card-list .cell { font-size: .95rem; }
+#mercadoPage .card-list .cell.grow { min-width: 200px; }
+#mercadoPage .card-list .actions { display: flex; gap: 8px; }
+
+#mercadoPage .empty {
+  padding: 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+}
+
+/* duas colunas -> stack no mobile */
+#mercadoPage .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 900px){ #mercadoPage .two-col { grid-template-columns: 1fr; } }
+
+/* listagem de mercados: tabela compacta com botões grandes */
+#mercadoPage .card-table .table { width: 100%; }
+#mercadoPage .card-table .row {
+  display: grid;
+  grid-template-columns: 1.6fr repeat(3, 1fr) auto;
+  gap: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+#mercadoPage .card-table .row.header {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0 6px 6px;
+  color: var(--muted);
+}
+#mercadoPage .card-table .cell strong { font-weight: 600; }
+#mercadoPage .card-table .cell .muted { color: var(--muted); }
+#mercadoPage .card-table .row .btn-solid { padding: 8px 12px; }
+
+@media (max-width: 960px){
+  #mercadoPage .card-table .row { grid-template-columns: 1.4fr 1fr 1fr; }
+  #mercadoPage .card-table .row .cell:nth-child(3),
+  #mercadoPage .card-table .row .cell:nth-child(4){ display: none; } /* esconde máx e vol em ecrã pequeno */
+}
+
+/* tipografia e microdetalhes */
+#mercadoPage h2 { margin: 4px 0 8px; }
+#mercadoPage .small { font-size: .9rem; }
+
+/* util */
+.is-disabled{ opacity:.5; pointer-events:none; }
+
+
+/* miniaturas dos edifícios */
+#mercadoPage .thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: transform .2s ease, opacity .2s ease;
+}
+#mercadoPage .thumb:hover { transform: scale(1.05); opacity: 0.9; }
+
+/* nas listagens principais */
+#mercadoPage .cell-thumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* melhor integração com layout mobile */
+@media (max-width: 640px){
+  #mercadoPage .thumb { width: 44px; height: 44px; border-radius: 8px; }
+}

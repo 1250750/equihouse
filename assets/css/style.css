@@ -460,3 +460,32 @@ body {
   }
 }
 
+/* — alinhamento perfeito do logo e menu — */
+.topbar { min-height: 64px; }              /* altura estável do header */
+.logo-wrap { align-items: center; gap: 12px; }
+.logo-text { line-height: 1; }             /* evita “salto” vertical */
+
+.logo-img {
+  height: 28px;            /* ajusta aqui o tamanho do logo */
+  width: auto;
+  display: block;          /* elimina espaço de baseline */
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.nav { align-items: center; }              /* centra verticalmente os links */
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;          /* impede que o texto empurre o header */
+  height: 36px;            /* altura clicável consistente */
+  padding: 0 14px;         /* mantém o “pill” bonito */
+}
+
+/* se o teu logo precisar de maior dimensão em ecrãs grandes */
+@media (min-width: 1200px){
+  .logo-img { height: 32px; }
+}
+@media (max-width: 420px){
+  .logo-img { height: 24px; }
+}

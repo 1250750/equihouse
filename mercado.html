@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mercado Secundário | CryptoEstate</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/mercado.css" />
   </head>
   <body class="dark">
-    <!-- glows do tema -->
     <div class="page-glow page-glow-1"></div>
     <div class="page-glow page-glow-2"></div>
 
@@ -16,57 +16,78 @@
         <div class="logo-dot"></div>
         <div class="logo-text">CryptoEstate</div>
       </div>
-
       <nav class="nav">
         <a href="index.html">Início</a>
         <a href="projetos.html">Projetos</a>
-        <a href="mercado.html" class="active">Mercado Secundário</a>
+        <a href="mercado.html" class="active">Mercado</a>
         <a href="como-funciona.html">Como Funciona</a>
         <a href="contactos.html">Contactos</a>
       </nav>
-
       <div class="actions">
-        <button class="ghost-btn" id="btnTheme" aria-label="Trocar tema">
-          <span class="dot"></span>
-        </button>
-        <button class="primary-btn" id="btnWallet">
-          <span class="icon">⬤</span>
-          Ligar carteira
-        </button>
+        <button class="ghost-btn" id="btnTheme" aria-label="Trocar tema"><span class="dot"></span></button>
+        <button class="primary-btn" id="btnWallet"><span class="icon">⬤</span>Ligar carteira</button>
       </div>
     </header>
 
-    <main class="page">
-        
-      <h1>Mercado secundário</h1>
-      <p class="muted">Compra e vende os tokens que recebeste quando investiste num certo projeto.</p>
+    <main id="mercadoPage" class="page">
+      <section class="page-head">
+        <h1>Mercado</h1>
+        <p class="muted">Compra e vende tokens de edifícios.</p>
+      </section>
 
-    <br>
-    <h2>Os meus anúncios ativos (0)</h2>
-     <div class="chart-box">
-          <p>Não tens anúncios ativos no mercado secundário.</p>
-          
+      <!-- barra fixa com carteira e filtros -->
+      <section class="sticky-bar" role="region" aria-label="Controlo de mercado">
+        <div class="wallet-mini">
+          <div>
+            <span class="label">Carteira</span>
+            <span id="walletId" class="value">—</span>
+          </div>
+          <div class="wallet-quick">
+            <button class="btn-ghost" id="btnCopy" aria-label="Copiar endereço">Copiar</button>
+            <a class="btn-solid" href="projetos.html">Explorar</a>
+          </div>
         </div>
-        <br>
-        <h2>Os meus pedidos de compra (0)</h2>
-     <div class="chart-box">
-          <p>Não realizaste nenhum pedido de compra.</p>
-          
+        <div class="filters">
+          <input id="filtroToken" class="input" placeholder="filtrar por token ou edifício…" aria-label="Filtro" />
+          <select id="ordenarPor" class="input" aria-label="Ordenar">
+            <option value="vol">Maior volume (24h)</option>
+            <option value="last">Último preço</option>
+            <option value="high">Máx 24h</option>
+          </select>
         </div>
-        <br>
-    
+      </section>
 
-      <div class="market-layout">
-        <div class="table-like" id="mercadoLista"></div>
-    
-      </div>
+      <!-- holdings em cartões -->
+      <section class="block">
+        <h2>Os meus tokens</h2>
+        <div id="holdingsTable" class="card-list"></div>
+      </section>
+
+      <!-- as minhas ordens (duas colunas que viram stack no mobile) -->
+      <section class="block two-col">
+        <div>
+          <h2>Vendas ativas</h2>
+          <div id="mySells" class="card-list"></div>
+        </div>
+        <div>
+          <h2>Compras ativas</h2>
+          <div id="myBuys" class="card-list"></div>
+        </div>
+      </section>
+
+      <!-- mercados -->
+      <section class="block">
+        <h2>Mercados por edifício</h2>
+        <p class="muted small">Escolhe um mercado para abrir a página com gráfico, livro de ordens e ações.</p>
+        <div id="marketsList" class="card-table"></div>
+      </section>
     </main>
 
-    <footer class="footer white">
-      <p>© 2025 CryptoEstate</p>
+    <footer class="footer">
+      <p>© <span id="year">2025</span> CryptoEstate</p>
     </footer>
 
     <script src="assets/js/app.js"></script>
-    <script src="script.js"></script>
+    <script src="assets/js/mercado.js"></script>
   </body>
 </html>

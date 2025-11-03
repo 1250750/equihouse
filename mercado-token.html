@@ -1,0 +1,125 @@
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EquiHouse — Investir em imobiliário</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="img/logo.png">
+    <!-- montserrat + inter, estilo framer -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="dark">
+    <!-- glows do tema -->
+    <div class="page-glow page-glow-1"></div>
+    <div class="page-glow page-glow-2"></div>
+
+    <header class="topbar">
+      <div class="logo-wrap">
+  <!-- antes: <img src="img/logo.png" alt="" style="width: 3%; height: 3%;"> -->
+  <img src="img/logo.png" alt="EquiHouse" class="logo-img">
+  <div class="logo-text">EquiHouse</div>
+</div>
+
+      <nav class="nav">
+        <a href="index.html">Início</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="mercado.html" class="active">Mercado Secundário</a>
+        <a href="como-funciona.html">Como Funciona</a>
+        <a href="contactos.html">Contactos</a>
+      </nav>
+
+      <div class="actions">
+        <button class="ghost-btn" id="btnTheme" aria-label="Trocar tema">
+          <span class="dot"></span>
+        </button>
+        <button class="primary-btn" id="btnWallet">
+          <span class="icon">⬤</span>
+          Ligar carteira
+        </button>
+      </div>
+    </header>
+
+    <main id="tokenPage" class="page">
+      <a class="btn-ghost" href="mercado.html">← Voltar ao mercado</a>
+
+      <section class="token-head">
+        <div>
+          <h1 id="tNome">—</h1>
+          <p class="muted">Token <strong id="tTicker">—</strong></p>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <span class="label">Último preço</span>
+            <span id="tLast" class="value">—</span>
+          </div>
+          <div class="stat">
+            <span class="label">Máximo 24h</span>
+            <span id="tHigh" class="value">—</span>
+          </div>
+          <div class="stat">
+            <span class="label">Volume 24h</span>
+            <span id="tVol" class="value">—</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- gráfico simples em canvas -->
+      <section class="chart-box">
+        <canvas id="chart" width="900" height="300"></canvas>
+      </section>
+
+      <section class="token-grid">
+        <!-- livro de ordens -->
+        <div class="orderbook">
+          <h2>Livro de ordens</h2>
+          <div class="ob-two">
+            <div>
+              <h3 class="sell">Sells (asks)</h3>
+              <div id="asks" class="table-like small"></div>
+            </div>
+            <div>
+              <h3 class="buy">Buys (bids)</h3>
+              <div id="bids" class="table-like small"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- criar order -->
+        <div class="trade-box">
+          <h2>Nova ordem</h2>
+          <div class="tabs">
+            <button class="tab active" data-side="buy">Comprar</button>
+            <button class="tab" data-side="sell">Vender</button>
+          </div>
+          <form id="orderForm" class="form">
+            <label>Preço (€)
+              <input class="input" type="number" step="0.01" id="price" required />
+            </label>
+            <label>Quantidade
+              <input class="input" type="number" step="1" id="qty" required />
+            </label>
+            <div class="form-row">
+              <span class="muted">Total: <strong id="total">€0,00</strong></span>
+              <button class="btn-solid" type="submit">Adicionar ordem</button>
+            </div>
+            <input type="hidden" id="side" value="buy"/>
+          </form>
+
+          <div class="my-mini">
+            <h3>As minhas ordens neste mercado</h3>
+            <div id="myOrdersThis" class="table-like small"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year">2025</span> CryptoEstate</p>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/mercado-token.js"></script>
+  </body>
+</html>

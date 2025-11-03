@@ -144,3 +144,5 @@ function selecionarToken(token) {
   desenharGrafico(token);
   alert(`a mostrar histórico do token ${token}`);
 }
+
+
