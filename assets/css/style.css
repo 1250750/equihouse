@@ -493,3 +493,35 @@ body {
 #btnCoyp{
   background-color: #9966ff;
 }
+
+.sponsor-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.sponsor-logos img {
+  height: 46px;
+  filter: grayscale(1) brightness(0.9);
+  opacity: 0.8;
+  transition: all 0.25s ease;
+}
+
+.sponsor-logos img:hover {
+  filter: grayscale(0) brightness(1.1) drop-shadow(0 0 12px rgba(74,227,255,0.4));
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+@media (max-width: 700px) {
+  .sponsor-logos {
+    gap: 28px;
+  }
+  .sponsor-logos img {
+    height: 38px;
+  }
+}
+

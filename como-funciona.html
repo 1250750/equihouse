@@ -3,12 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Como Funciona | CryptoEstate</title>
+    <title>Como Funciona | EquiHouse</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" href="img/logo.png" />
   </head>
-  <body>
+  <body class="dark">
+    <!-- glows -->
+    <div class="page-glow page-glow-1"></div>
+    <div class="page-glow page-glow-2"></div>
+
+    <!-- topo -->
     <header class="topbar">
-      <div class="logo">CryptoEstate</div>
+      <div class="logo-wrap">
+        <img src="img/logo.png" alt="EquiHouse" class="logo-img" />
+        <div class="logo-text">EquiHouse</div>
+      </div>
+
       <nav class="nav">
         <a href="index.html">Início</a>
         <a href="projetos.html">Projetos</a>
@@ -16,24 +26,116 @@
         <a href="como-funciona.html" class="active">Como Funciona</a>
         <a href="contactos.html">Contactos</a>
       </nav>
-      <button id="btnTheme" class="btn">🌙</button>
+
+      <div class="actions">
+        <button class="ghost-btn" id="btnTheme" aria-label="Trocar tema">
+          <span class="dot"></span>
+        </button>
+        <button class="primary-btn" id="btnWallet">
+          <span class="icon">⬤</span>Ligar carteira
+        </button>
+      </div>
     </header>
 
-    <main class="page narrow">
-      <h1>Como funciona</h1>
-      <ol class="steps">
-        <li><strong>1. Cria conta</strong> — faz KYC rápido.</li>
-        <li><strong>2. Escolhe projeto</strong> — vê rentabilidade, prazo e risco.</li>
-        <li><strong>3. Paga em cripto</strong> — enviamos endereço BTC/ETH/USDT.</li>
-        <li><strong>4. Recebe tokens</strong> — ficam na tua wallet da plataforma.</li>
-        <li><strong>5. Recebe rendas</strong> — pagamos mensalmente em USDT.</li>
-        <li><strong>6. Vende quando quiseres</strong> — usa o mercado secundário.</li>
-      </ol>
-      <p class="alert">isto é só mockup. não transferir cripto para aqui, obviously 😅</p>
+    <!-- conteúdo -->
+    <main class="page" style="padding:60px 5vw 80px;">
+      <section class="hero">
+        <p class="tag">Sobre nós • Transparência e inovação</p>
+        <h1>Como funciona a EquiHouse</h1>
+        <p class="subtitle" style="max-width:720px;">
+          A EquiHouse é uma plataforma de <strong>crowdfunding imobiliário</strong> que permite investir em projetos de construção nova de forma <strong>segura, transparente e acessível</strong>, através da tokenização de ativos e da tecnologia <strong>blockchain</strong>.
+        </p>
+      </section>
+
+      <section class="grid-section" style="padding-top:10px;">
+        <div class="grid-cards" style="grid-template-columns: 1fr 1fr;">
+          <article class="grid-card" style="grid-column: span 2;">
+            <h3>1. Registo e validação</h3>
+            <p>
+              O processo inicia-se com o registo do utilizador e a validação da identidade (<strong>KYC/AML</strong>),
+              garantindo conformidade com as normas legais e de segurança.
+              Após aprovação, o investidor tem acesso à sua <strong>área pessoal interativa</strong>,
+              onde pode consultar projetos disponíveis, cada um com informação detalhada sobre localização, promotor,
+              licenças, plano financeiro, riscos e previsões de rentabilidade.
+            </p>
+          </article>
+
+          <article class="grid-card">
+            <h3>2. Tokenização e contratos inteligentes</h3>
+            <p>
+              Quando o utilizador decide investir, a plataforma utiliza
+              <strong>smart contracts</strong> para emitir <strong>tokens digitais</strong> que representam a participação
+              proporcional do investidor no projeto. Estes tokens são registados na blockchain,
+              assegurando transparência, rastreabilidade e imutabilidade das operações.
+            </p>
+          </article>
+
+          <article class="grid-card">
+            <h3>3. Dashboard e acompanhamento</h3>
+            <p>
+              Através de um <strong>dashboard intuitivo</strong>, o investidor acompanha em tempo real o progresso das obras,
+              marcos técnicos, orçamento e distribuições financeiras.
+              Os <strong>contratos inteligentes</strong> executam automaticamente desbloqueios de fundos e pagamentos de rendimentos,
+              eliminando intermediários.
+            </p>
+          </article>
+
+          <article class="grid-card">
+            <h3>4. Mercado secundário</h3>
+            <p>
+              A plataforma integra um <strong>mercado secundário interno</strong>, onde os tokens podem ser
+              comprados e vendidos entre utilizadores, permitindo <strong>liquidez imediata</strong> —
+              algo raro no investimento imobiliário tradicional.
+            </p>
+          </article>
+
+          <article class="grid-card">
+            <h3>5. Distribuição de lucros</h3>
+            <p>
+              A distribuição de lucros e rendas é <strong>automática e segura</strong>, sendo creditada diretamente
+              na <strong>carteira digital</strong> do utilizador, conforme as condições definidas no contrato do projeto.
+            </p>
+          </article>
+
+          <article class="grid-card">
+            <h3>6. Transparência total</h3>
+            <p>
+              A plataforma disponibiliza relatórios de desempenho e indicadores de mercado em tempo real,
+              promovendo <strong>confiança e transparência</strong> entre investidores e promotores.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section style="margin-top:60px;text-align:center;">
+        <h2>O nosso propósito</h2>
+        <p style="max-width:700px;margin:12px auto;color:var(--muted);">
+          Democratizar o acesso ao investimento imobiliário através da tecnologia.
+          Tornar o investimento em construção e arrendamento <strong>tão simples como comprar ações</strong>,
+          mas com rendimentos reais e tangíveis — edifícios, obras e comunidades.
+        </p>
+        
+    
+            <br>
+         <a href="projetos.html" class="btn-solid" style="margin-top:60px;text-align:center;">Explorar projetos</a>
+      </section>
+      <section class="sponsors" style="margin-top:80px;text-align:center;">
+  <h2>Os nossos patrocinadores</h2>
+  <p style="color:var(--muted);margin-bottom:32px;">Parceiros estratégicos que acreditam na tokenização imobiliária.</p>
+
+  <div class="sponsor-logos">
+    <img src="img/lp.png" alt="">
+    <img src="img/Pingo_Doce_logo.png" alt="">
+    <img src="img/tl.png" alt="">
+    <img src="img/cryptocom.webp" alt="">
+    <img src="img/remax.png" alt="">
+  </div>
+</section>
+     
     </main>
 
     <footer class="footer">
-      <p>© 2025 CryptoEstate</p>
+      <p>© <span id="year">2025</span> EquiHouse — Crowdfunding Imobiliário Tokenizado</p>
     </footer>
 
     <script src="assets/js/app.js"></script>
