@@ -2,124 +2,106 @@
 <html lang="pt-PT">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mercado do Token | CryptoEstate</title>
-
-    <!-- tema base -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercado do Token | EquiHouse</title>
     <link rel="stylesheet" href="assets/css/style.css" />
-    <!-- estilos do mercado (escopados) -->
     <link rel="stylesheet" href="assets/css/mercado.css" />
+    <link rel="icon" href="img/logo.png">
   </head>
   <body class="dark">
-    <!-- glows -->
     <div class="page-glow page-glow-1"></div>
     <div class="page-glow page-glow-2"></div>
 
     <header class="topbar">
       <div class="logo-wrap">
-        <img src="img/logo.png" alt="CryptoEstate" class="logo-img" />
-        <div class="logo-text">CryptoEstate</div>
+        <img src="img/logo.png" alt="EquiHouse" class="logo-img">
+        <div class="logo-text">EquiHouse</div>
       </div>
-
       <nav class="nav">
         <a href="index.html">Início</a>
         <a href="projetos.html">Projetos</a>
-        <a href="mercado.html" class="active">Mercado</a>
+        <a href="mercado.html" class="active">Mercado Secundário</a>
         <a href="como-funciona.html">Como Funciona</a>
         <a href="contactos.html">Contactos</a>
       </nav>
-
       <div class="actions">
-        <button class="ghost-btn" id="btnTheme" aria-label="Trocar tema">
-          <span class="dot"></span>
-        </button>
-        <button class="primary-btn" id="btnWallet">
-          <span class="icon">⬤</span>
-          Ligar carteira
-        </button>
+        <button class="ghost-btn" id="btnTheme" aria-label="Trocar tema"><span class="dot"></span></button>
+        <button class="primary-btn" id="btnWallet"><span class="icon">⬤</span>Ligar carteira</button>
       </div>
     </header>
 
-    <main id="tokenPage" class="page">
-      <a class="btn-ghost" href="mercado.html">← Voltar ao mercado</a>
+    <main id="tokenPage" class="page" style="padding:24px 5vw 50px;">
+      <section class="page-head">
+        <h1 id="tokenTitle">—</h1>
+        <p class="muted">Gráfico, livro de ordens e ações para este ativo.</p>
+      </section>
 
-      <!-- cabeçalho do token -->
       <section class="token-head">
-        <div>
-          <h1 id="tNome">—</h1>
-          <p class="muted">Token <strong id="tTicker">—</strong></p>
+        <div class="cell-thumb">
+          <img id="tokenThumb" class="thumb" alt="" />
+          <div>
+            <div id="tokenName"><strong>—</strong></div>
+            <div class="muted" id="tokenCode">—</div>
+          </div>
         </div>
         <div class="stats">
-          <div class="stat">
-            <span class="label">Último preço</span>
-            <span id="tLast" class="value">—</span>
-          </div>
-          <div class="stat">
-            <span class="label">Máximo 24h</span>
-            <span id="tHigh" class="value">—</span>
-          </div>
-          <div class="stat">
-            <span class="label">Volume 24h</span>
-            <span id="tVol" class="value">—</span>
-          </div>
+          <div class="stat"><div class="label">Último</div><div class="value" id="statLast">—</div></div>
+          <div class="stat"><div class="label">Máx 24h</div><div class="value" id="statHigh">—</div></div>
+          <div class="stat"><div class="label">Vol 24h</div><div class="value" id="statVol">—</div></div>
         </div>
       </section>
 
-      <!-- gráfico (canvas) -->
       <section class="chart-box">
-        <canvas id="chart" width="900" height="300"></canvas>
+        <canvas id="priceChart" width="900" height="280" style="width:100%;height:auto;"></canvas>
       </section>
 
-      <!-- grelha: livro de ordens + nova ordem -->
       <section class="token-grid">
-        <div class="orderbook">
+        <div>
           <h2>Livro de ordens</h2>
           <div class="ob-two">
-            <div>
-              <h3 class="sell">Sells (asks)</h3>
-              <div id="asks" class="table-like small"></div>
-            </div>
-            <div>
-              <h3 class="buy">Buys (bids)</h3>
-              <div id="bids" class="table-like small"></div>
-            </div>
+            <div class="table-like small" id="asks"></div>
+            <div class="table-like small" id="bids"></div>
           </div>
         </div>
 
-        <div class="trade-box">
-          <h2>Nova ordem</h2>
+        <div>
+          <h2>Ações</h2>
           <div class="tabs">
-            <button class="tab active" data-side="buy">Comprar</button>
-            <button class="tab" data-side="sell">Vender</button>
+            <button class="tab active" data-tab="buy">Comprar</button>
+            <button class="tab" data-tab="sell">Vender</button>
           </div>
-          <form id="orderForm" class="form">
+          <form class="form" id="tradeForm">
             <label>Preço (€)
               <input class="input" type="number" step="0.01" id="price" required />
             </label>
-            <label>Quantidade
+            <label>Quantidade (tokens)
               <input class="input" type="number" step="1" id="qty" required />
             </label>
             <div class="form-row">
-              <span class="muted">Total: <strong id="total">€0,00</strong></span>
-              <button class="btn-solid" type="submit">Adicionar ordem</button>
+              <div class="muted">Total: <strong id="total">—</strong></div>
+              <button class="btn-solid" type="submit">Submeter</button>
             </div>
-            <input type="hidden" id="side" value="buy" />
           </form>
 
           <div class="my-mini">
-            <h3>As minhas ordens neste mercado</h3>
-            <div id="myOrdersThis" class="table-like small"></div>
+            <h3>As minhas ordens</h3>
+            <div id="myMiniOrders" class="table-like small"></div>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <p>© <span id="year">2025</span> CryptoEstate</p>
+      <p>© <span id="year">2025</span> EquiHouse</p>
     </footer>
 
-    <!-- JS -->
     <script src="assets/js/app.js"></script>
-    <script src="assets/js/mercado-token.js"></script>
+    <script src="assets/js/mercado.js"></script>
+    <script>
+      // arranca o modo "token" do mercado.js (sem mexer em mais nada)
+      document.addEventListener('DOMContentLoaded', () => {
+        if (typeof initTokenPage === 'function') initTokenPage();
+      });
+    </script>
   </body>
 </html>

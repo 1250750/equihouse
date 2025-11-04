@@ -489,3 +489,7 @@ body {
 @media (max-width: 420px){
   .logo-img { height: 24px; }
 }
+
+#btnCoyp{
+  background-color: #9966ff;
+}

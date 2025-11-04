@@ -6,21 +6,21 @@
     <title>Mercado Secundário | EquiHouse</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/mercado.css" />
+    <link rel="icon" href="img/logo.png">
   </head>
   <body class="dark">
     <div class="page-glow page-glow-1"></div>
     <div class="page-glow page-glow-2"></div>
 
     <header class="topbar">
-     <div class="logo-wrap">
-  <!-- antes: <img src="img/logo.png" alt="" style="width: 3%; height: 3%;"> -->
-  <img src="img/logo.png" alt="EquiHouse" class="logo-img">
-  <div class="logo-text">EquiHouse</div>
-</div>
+      <div class="logo-wrap">
+        <img src="img/logo.png" alt="EquiHouse" class="logo-img">
+        <div class="logo-text">EquiHouse</div>
+      </div>
       <nav class="nav">
         <a href="index.html">Início</a>
         <a href="projetos.html">Projetos</a>
-        <a href="mercado.html" class="active">Mercado</a>
+        <a href="mercado.html" class="active">Mercado Secundário</a>
         <a href="como-funciona.html">Como Funciona</a>
         <a href="contactos.html">Contactos</a>
       </nav>
@@ -30,13 +30,12 @@
       </div>
     </header>
 
-    <main id="mercadoPage" class="page">
+    <main id="mercadoPage" class="page" style="padding:24px 5vw 50px;">
       <section class="page-head">
         <h1>Mercado</h1>
         <p class="muted">Compra e vende tokens de edifícios.</p>
       </section>
 
-      <!-- barra fixa com carteira e filtros -->
       <section class="sticky-bar" role="region" aria-label="Controlo de mercado">
         <div class="wallet-mini">
           <div>
@@ -58,34 +57,31 @@
         </div>
       </section>
 
-      <!-- holdings em cartões -->
-      <section class="block">
-        <h2>Os meus tokens</h2>
-        <div id="holdingsTable" class="card-list"></div>
-      </section>
-
-      <!-- as minhas ordens (duas colunas que viram stack no mobile) -->
-      <section class="block two-col">
-        <div>
-          <h2>Vendas ativas</h2>
-          <div id="mySells" class="card-list"></div>
-        </div>
-        <div>
-          <h2>Compras ativas</h2>
-          <div id="myBuys" class="card-list"></div>
-        </div>
-      </section>
-
-      <!-- mercados -->
       <section class="block">
         <h2>Mercados por edifício</h2>
         <p class="muted small">Escolhe um mercado para abrir a página com gráfico, livro de ordens e ações.</p>
         <div id="marketsList" class="card-table"></div>
       </section>
+
+      <section class="two-col block">
+        <div>
+          <h2>As minhas ordens de venda</h2>
+          <div id="mySells" class="card-list"></div>
+        </div>
+        <div>
+          <h2>Os meus pedidos de compra</h2>
+          <div id="myBuys" class="card-list"></div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Os meus tokens</h2>
+        <div id="holdingsTable" class="card-list"></div>
+      </section>
     </main>
 
     <footer class="footer">
-      <p>© <span id="year">2025</span> CryptoEstate</p>
+      <p>© <span id="year">2025</span> EquiHouse</p>
     </footer>
 
     <script src="assets/js/app.js"></script>

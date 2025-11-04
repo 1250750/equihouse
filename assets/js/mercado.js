@@ -42,32 +42,32 @@ const markets = [
   {
     token: "LSB1",
     nome: "Residencial Parque, Lisboa",
-    last: 10.8,
-    high24: 11.4,
+    last: 108.8,
+    high24: 111.4,
     vol24: 4320,
     img: "https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=600&q=80"
   },
   {
     token: "PRT2",
     nome: "Praça Armando Pimentel, Porto (II)",
-    last: 12.2,
-    high24: 12.9,
+    last: 122.2,
+    high24: 122.9,
     vol24: 1990,
     img: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=600&q=80"
   },
   {
     token: "BRG7",
     nome: "Rua da Portela, Nogueira (VII)",
-    last: 8.9,
-    high24: 9.3,
+    last: 82.9,
+    high24: 93.3,
     vol24: 2760,
     img: "https://images.unsplash.com/photo-1494526585095-c41746248156?w=600&q=80"
   },
   {
     token: "BRG4",
     nome: "Residência Académica, Braga",
-    last: 7.8,
-    high24: 8.1,
+    last: 177.8,
+    high24: 87.1,
     vol24: 1430,
     img: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80"
   }
@@ -286,6 +286,153 @@ function setYear() {
 // init
 // ————————————————————————————————————————————
 document.addEventListener("DOMContentLoaded", ()=>{
+  renderWallet();
+  renderHoldings();
+  renderOrders();
+  renderMarkets();
+  wireFilters();
+  setYear();
+});
+
+// assets/js/mercado.js
+
+/* === datasets & utilitários (INALTERADO) === */
+// ... (mantém exatamente os teus arrays holdings, mySellOrders, myBuyOrders, markets e utils) ...
+
+// ————————————————————————————————————————————
+// extra: helpers para a token page
+// ————————————————————————————————————————————
+function getTokenFromURL() {
+  const p = new URLSearchParams(location.search);
+  return (p.get('token') || '').toUpperCase();
+}
+function q(sel){ return document.querySelector(sel); }
+
+// desenho de gráfico muito simples no <canvas id="priceChart">
+function drawSimpleLine(canvas, series){
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  // eixos
+  ctx.strokeStyle = '#d1d5db';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(40, 10);
+  ctx.lineTo(40, canvas.height-30);
+  ctx.lineTo(canvas.width-20, canvas.height-30);
+  ctx.stroke();
+
+  // escala “mini”
+  const min = Math.min(...series);
+  const max = Math.max(...series);
+  const h = canvas.height - 40;
+  const w = canvas.width - 60;
+
+  ctx.strokeStyle = '#4ae3ff';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  series.forEach((v,i)=>{
+    const x = 40 + (w/(series.length-1))*i;
+    const y = canvas.height-30 - ((v-min)/(max-min||1))*h;
+    if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+  });
+  ctx.stroke();
+}
+
+// cria tabelas simples para asks/bids
+function renderOB(sideRoot, rows, side){
+  if(!sideRoot) return;
+  sideRoot.innerHTML = `
+    <div class="row header">
+      <div class="cell">Preço</div>
+      <div class="cell">Qtd</div>
+      <div class="cell">Total</div>
+    </div>
+    ${rows.map(r=>`
+      <div class="row">
+        <div class="cell ${side==='sell'?'sell':'buy'}"><strong>${eur(r.price)}</strong></div>
+        <div class="cell">${r.qty}</div>
+        <div class="cell">${eur(r.price*r.qty)}</div>
+      </div>
+    `).join('')}
+  `;
+}
+
+// ————————————————————————————————————————————
+// TOKEN PAGE: render geral
+// ————————————————————————————————————————————
+function renderTokenPage(token){
+  const m = markets.find(x=>x.token===token);
+  if(!m){ location.href='mercado.html'; return; }
+
+  // header + stats
+  const img = getImg(token);
+  const sLast = q('#statLast'), sHigh = q('#statHigh'), sVol = q('#statVol');
+  const title = q('#tokenTitle'), code = q('#tokenCode'), name = q('#tokenName'), thumb = q('#tokenThumb');
+
+  if(thumb){ thumb.src = img; thumb.alt = m.nome; }
+  if(title) title.textContent = `${m.nome}`;
+  if(code)  code.textContent  = token;
+  if(name)  name.innerHTML    = `<strong>${m.nome}</strong>`;
+
+  if(sLast) sLast.textContent = eur(m.last);
+  if(sHigh) sHigh.textContent = eur(m.high24);
+  if(sVol)  sVol.textContent  = m.vol24.toLocaleString('pt-PT');
+
+  // gráfico fake por token (coerente com app.js)
+  const seed = token.split('').reduce((a,c)=>a+c.charCodeAt(0),0);
+  const base = Array.from({length:10}, (_,i)=> m.last + Math.sin((i+seed)%7)* (m.last*0.03)).map(v=>+v.toFixed(2));
+  drawSimpleLine(document.getElementById('priceChart'), base);
+
+  // livro de ordens mock
+  const asks = Array.from({length:5}, (_,i)=>({price:+(m.last+0.2+i*0.2).toFixed(2), qty: 5+i*3}));
+  const bids = Array.from({length:5}, (_,i)=>({price:+(m.last-0.2-i*0.2).toFixed(2), qty: 6+i*2}));
+  renderOB(document.getElementById('asks'), asks, 'sell');
+  renderOB(document.getElementById('bids'), bids, 'buy');
+
+  // tabs comprar/vender
+  const tabs = document.querySelectorAll('.tab');
+  let currentTab = 'buy';
+  tabs.forEach(t=> t.addEventListener('click', ()=>{
+    tabs.forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    currentTab = t.dataset.tab;
+  }));
+
+  // formulário & total
+  const price = q('#price'), qty = q('#qty'), total = q('#total'), form = q('#tradeForm');
+  function updateTotal(){
+    const p = parseFloat(price.value||0), qtt = parseFloat(qty.value||0);
+    total.textContent = isFinite(p*qtt) ? eur(p*qtt) : '—';
+  }
+  ['input','change'].forEach(ev=>{
+    price?.addEventListener(ev, updateTotal);
+    qty?.addEventListener(ev, updateTotal);
+  });
+  form?.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    alert(`${currentTab==='buy'?'compra':'venda'} enviada (demo)`);
+    price.value=''; qty.value=''; updateTotal();
+  });
+}
+
+// ————————————————————————————————————————————
+// já existentes: renderWallet / renderHoldings / renderOrders / renderMarkets …
+// (mantém tal como no teu ficheiro actual)
+// ————————————————————————————————————————————
+
+function initTokenPage(){
+  const token = getTokenFromURL();
+  renderWallet();
+  setYear();
+  renderTokenPage(token);
+}
+
+// init normal (mercado) continua igual
+document.addEventListener("DOMContentLoaded", ()=>{
+  const isToken = document.getElementById('tokenPage');
+  if(isToken) return; // token page arranca via initTokenPage()
   renderWallet();
   renderHoldings();
   renderOrders();
