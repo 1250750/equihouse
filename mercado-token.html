@@ -1,31 +1,30 @@
+<!DOCTYPE html>
 <html lang="pt-PT">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EquiHouse — Investir em imobiliário</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mercado do Token | CryptoEstate</title>
+
+    <!-- tema base -->
     <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" href="img/logo.png">
-    <!-- montserrat + inter, estilo framer -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- estilos do mercado (escopados) -->
+    <link rel="stylesheet" href="assets/css/mercado.css" />
   </head>
   <body class="dark">
-    <!-- glows do tema -->
+    <!-- glows -->
     <div class="page-glow page-glow-1"></div>
     <div class="page-glow page-glow-2"></div>
 
     <header class="topbar">
       <div class="logo-wrap">
-  <!-- antes: <img src="img/logo.png" alt="" style="width: 3%; height: 3%;"> -->
-  <img src="img/logo.png" alt="EquiHouse" class="logo-img">
-  <div class="logo-text">EquiHouse</div>
-</div>
+        <img src="img/logo.png" alt="CryptoEstate" class="logo-img" />
+        <div class="logo-text">CryptoEstate</div>
+      </div>
 
       <nav class="nav">
         <a href="index.html">Início</a>
         <a href="projetos.html">Projetos</a>
-        <a href="mercado.html" class="active">Mercado Secundário</a>
+        <a href="mercado.html" class="active">Mercado</a>
         <a href="como-funciona.html">Como Funciona</a>
         <a href="contactos.html">Contactos</a>
       </nav>
@@ -44,6 +43,7 @@
     <main id="tokenPage" class="page">
       <a class="btn-ghost" href="mercado.html">← Voltar ao mercado</a>
 
+      <!-- cabeçalho do token -->
       <section class="token-head">
         <div>
           <h1 id="tNome">—</h1>
@@ -65,13 +65,13 @@
         </div>
       </section>
 
-      <!-- gráfico simples em canvas -->
+      <!-- gráfico (canvas) -->
       <section class="chart-box">
         <canvas id="chart" width="900" height="300"></canvas>
       </section>
 
+      <!-- grelha: livro de ordens + nova ordem -->
       <section class="token-grid">
-        <!-- livro de ordens -->
         <div class="orderbook">
           <h2>Livro de ordens</h2>
           <div class="ob-two">
@@ -86,7 +86,6 @@
           </div>
         </div>
 
-        <!-- criar order -->
         <div class="trade-box">
           <h2>Nova ordem</h2>
           <div class="tabs">
@@ -104,7 +103,7 @@
               <span class="muted">Total: <strong id="total">€0,00</strong></span>
               <button class="btn-solid" type="submit">Adicionar ordem</button>
             </div>
-            <input type="hidden" id="side" value="buy"/>
+            <input type="hidden" id="side" value="buy" />
           </form>
 
           <div class="my-mini">
@@ -119,6 +118,7 @@
       <p>© <span id="year">2025</span> CryptoEstate</p>
     </footer>
 
+    <!-- JS -->
     <script src="assets/js/app.js"></script>
     <script src="assets/js/mercado-token.js"></script>
   </body>
