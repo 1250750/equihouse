@@ -9,7 +9,7 @@ const offers = [
     estado: "A financiar", // "Financiado" fica a vermelho
     imagem: "https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=800&q=80",
     token: "BIP1",
-    linkProjeto: "projeto-residencial-parque.html"
+    linkProjeto: "casa1.html"
   },
   {
     nome: "Cabana Compartilhada, Paranhos, Porto",
