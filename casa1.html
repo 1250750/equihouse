@@ -3,203 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Praça Armando Pimentel, Porto PT (II) | CryptoEstate</title>
+    <title>Residência Jardim das Camélias | EquiHouse</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/casa1.css" />
+    <link rel="icon" href="img/logo.png" />
   </head>
-  <body class="light">
-    <!-- topo igual ao resto do site -->
-    <header class="topbar white">
-      <div class="logo">CryptoEstate</div>
+  <body class="dark">
+    <div class="page-glow page-glow-1"></div>
+    <div class="page-glow page-glow-2"></div>
+
+    <header class="topbar">
+      <div class="logo-wrap">
+        <img src="img/logo.png" alt="EquiHouse" class="logo-img" />
+        <div class="logo-text">EquiHouse</div>
+      </div>
+
       <nav class="nav">
         <a href="index.html">Início</a>
-        <a href="projetos.html">Projetos</a>
+        <a href="projetos.html" class="active">Projetos</a>
         <a href="mercado.html">Mercado Secundário</a>
         <a href="como-funciona.html">Como Funciona</a>
         <a href="contactos.html">Contactos</a>
       </nav>
+
       <div class="actions">
-        <button class="btn-wallet" id="btnWallet">🔗 Ligar carteira</button>
-        <button id="btnTheme" class="btn-round">🌓</button>
+        <button class="ghost-btn" id="btnTheme" aria-label="Trocar tema"><span class="dot"></span></button>
+        <button class="primary-btn" id="btnWallet"><span class="icon">⬤</span>Ligar carteira</button>
       </div>
     </header>
 
-    <main class="page property-page">
-      <!-- breadcrumb suave -->
-      <p class="muted" style="margin-bottom:0.8rem;">
-        <a href="projetos.html" class="link">← Voltar aos projetos</a>
-      </p>
-
-      <div class="property-header">
-        <h1>Praça Armando Pimentel, Porto PT (II)</h1>
-        <p class="muted">Imóvel residencial • Porto, Portugal</p>
-      </div>
-
-      <div class="property-layout">
-        <!-- COLUNA ESQUERDA -->
-        <div class="property-main">
-          <!-- imagem / galeria simples -->
-          <div class="property-gallery">
-            <img
-              src="https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=1100"
-              alt="Praça Armando Pimentel, Porto"
-            />
-            <div class="thumbs">
-              <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=500" alt="Entrada" />
-              <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=500" alt="Zona envolvente" />
-              <img src="https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=500" alt="Fachada" />
-            </div>
+    <main class="page" style="padding: 40px 5vw 80px;">
+      <section class="project-hero">
+        <img src="img/casa1_main.jpg" alt="Residência Jardim das Camélias" class="project-hero-img" />
+        <div class="project-hero-info">
+          <h1>Residência Jardim das Camélias</h1>
+          <p class="location">Lisboa • Portugal</p>
+          <div class="stats">
+            <div><span>Rentabilidade:</span><strong>11,8% / ano</strong></div>
+            <div><span>Duração:</span><strong>24 meses</strong></div>
+            <div><span>Investimento mínimo:</span><strong>100 €</strong></div>
           </div>
+          <div class="progress">
+            <div class="progress-bar" style="width: 72%;"></div>
+          </div>
+          <p class="progress-text">72% financiado • 41 400€ de 57 500€</p>
+          <button class="btn-solid" id="btnInvestir">Investir agora</button>
+        </div>
+      </section>
 
-          <!-- separador info -->
-          <section class="card property-section">
-            <h2>Descrição do projeto</h2>
-            <p>
-              Este projeto corresponde à segunda ronda de captação para o imóvel localizado na Praça Armando Pimentel,
-              Porto. O objetivo é financiar trabalhos complementares e otimização do ativo.
-            </p>
-            <p>
-              O investimento é feito através de <strong>tokens do projeto</strong> — neste caso o token
-              <code>PAP-PT2</code>. Cada token representa uma fração económica deste ativo específico. Não estás a
-              comprar “tokens genéricos” da plataforma, mas sim <strong>deste edifício</strong>.
-            </p>
-            <p>
-              O projeto original na Crowdestate foi financiado com uma taxa de <strong>12% ao ano</strong> e obteve
-              <strong>104 investidores</strong>, levantando <strong>26 600 €</strong>, valor que assumimos aqui como
-              histórico para efeitos de transparência. :contentReference[oaicite:1]{index=1}
-            </p>
-          </section>
+      <section class="project-details">
+        <div class="left">
+          <h2>Descrição do projeto</h2>
+          <p>
+            A Residência Jardim das Camélias é um empreendimento habitacional situado em Lisboa,
+            focado em habitação sustentável e eficiência energética.  
+            O projeto consiste em 8 apartamentos T1 e T2 com certificação energética A+,  
+            acabamentos premium e integração total de soluções IoT.
+          </p>
 
-          <!-- secção tokenização -->
-          <section class="card property-section">
-            <h2>Tokenização e transparência</h2>
-            <ul class="list-clean">
-              <li>🧱 Token do ativo: <strong>PAP-PT2</strong></li>
-              <li>🔐 Contrato registado em blockchain para prova de propriedade económica</li>
-              <li>🪙 Pagamento possível em EUR / USDT (ETH/BTC facultativo)</li>
-              <li>🔁 Estes tokens podem ser revendidos no <a href="mercado.html" class="link">mercado secundário</a></li>
-            </ul>
-            <p class="muted mini">
-              a ideia é: investes ➜ recebes PAP-PT2 ➜ mais tarde podes pôr à venda ➜ histórico fica na rede
-            </p>
-          </section>
+          <h3>Plano financeiro</h3>
+          <ul>
+            <li>Custo total da obra: 57 500 €</li>
+            <li>Capital angariado: 41 400 €</li>
+            <li>Rentabilidade estimada: 11,8% / ano</li>
+            <li>Duração prevista: 24 meses</li>
+          </ul>
 
-          <!-- tabela de dados -->
-          <section class="card property-section">
-            <h2>Dados do investimento</h2>
-            <div class="property-grid-2">
-              <div>
-                <p class="label">Taxa alvo</p>
-                <p class="big">12% p.a.</p>
-              </div>
-              <div>
-                <p class="label">Investidores</p>
-                <p class="big">104</p>
-              </div>
-              <div>
-                <p class="label">Levantado</p>
-                <p class="big">26 600 €</p>
-              </div>
-              <div>
-                <p class="label">Estado</p>
-                <p><span class="status success">Financiado</span></p>
-              </div>
-            </div>
-          </section>
+          <h3>Riscos e mitigação</h3>
+          <p>
+            O projeto encontra-se assegurado por contrato de compra e venda
+            com garantia de performance. O promotor tem histórico comprovado
+            em projetos residenciais na área metropolitana de Lisboa.
+          </p>
 
-          <!-- gráfico mini de histórico de tokens desta propriedade -->
-          <section class="card property-section">
-            <h2>Histórico de transações do token PAP-PT2</h2>
-            <canvas id="graficoPropriedade" width="450" height="180"></canvas>
-            <p class="muted mini">dados simulados só para mostrar a integração no teu layout</p>
-          </section>
+          <h3>Documentos</h3>
+          <ul>
+            <li><a href="docs/plano-financeiro.pdf" target="_blank">Plano financeiro (PDF)</a></li>
+            <li><a href="docs/licenciamento.pdf" target="_blank">Licenciamento da obra</a></li>
+          </ul>
         </div>
 
-        <!-- COLUNA DIREITA -->
-        <aside class="property-sidebar">
-          <div class="card invest-card">
-            <h3>Investir nesta propriedade</h3>
-            <p class="muted mini">token do projeto: PAP-PT2</p>
-            <p class="label">Preço por token</p>
-            <p class="big">100 €</p>
-
-            <label class="muted mini" for="qtdTokens">quantidade de tokens</label>
-            <input type="number" id="qtdTokens" min="1" value="3" class="input" />
-
-            <p class="muted mini" id="totalInvest">Total: 300 €</p>
-
-            <button class="btn primary" onclick="investirPropriedade('PAP-PT2')">
-              Comprar tokens PAP-PT2
-            </button>
-            <p class="muted mini">
-              os tokens vão para a tua conta e ficam visíveis no mercado secundário
-            </p>
+        <div class="right">
+          <div class="promotor-card">
+            <h3>Promotor</h3>
+            <p><strong>BuildWise Investimentos Lda.</strong></p>
+            <p>Empresa portuguesa com 15 anos de experiência em construção e reabilitação urbana.</p>
           </div>
 
-          <div class="card">
-            <h3>Resumo</h3>
-            <p class="muted mini">Praça Armando Pimentel, Porto PT (II)</p>
-            <ul class="list-clean">
-              <li>📍 Porto, Portugal</li>
-              <li>🏗️ Reabilitação / complemento</li>
-              <li>🕒 Horizonte: 12-24 meses</li>
-              <li>📄 Documentação legal disponível</li>
-            </ul>
+          <div class="map-card">
+            <h3>Localização</h3>
+            <iframe
+              src="https://www.google.com/maps?q=lisboa%2C+portugal&output=embed"
+              width="100%" height="200" style="border:0;border-radius:12px;"
+              allowfullscreen="" loading="lazy">
+            </iframe>
           </div>
-        </aside>
-      </div>
+
+          <div class="token-info">
+            <h3>Tokenização</h3>
+            <p><strong>Símbolo:</strong> CAM1</p>
+            <p><strong>Blockchain:</strong> Ethereum</p>
+            <p><strong>Contrato:</strong> 0xF5...a91E</p>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="footer white">
-      <p>© 2025 CryptoEstate. Demo. Não é uma oferta real.</p>
+    <footer class="footer">
+      <p>© <span id="year">2025</span> EquiHouse — Crowdfunding Imobiliário Tokenizado</p>
     </footer>
 
     <script src="assets/js/app.js"></script>
-    <script>
-      // atualiza total do lado direito
-      const qtd = document.getElementById('qtdTokens');
-      const totalInvest = document.getElementById('totalInvest');
-      if (qtd && totalInvest) {
-        qtd.addEventListener('input', () => {
-          const v = Number(qtd.value || 0);
-          const total = v * 100;
-          totalInvest.textContent = 'Total: ' + total.toLocaleString('pt-PT') + ' €';
-        });
-      }
-
-      // gráfico pequenino desta propriedade
-      const canvas = document.getElementById('graficoPropriedade');
-      if (canvas) {
-        const ctx = canvas.getContext('2d');
-        // eixos
-        ctx.strokeStyle = '#e5e7eb';
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(30, 10);
-        ctx.lineTo(30, 160);
-        ctx.lineTo(430, 160);
-        ctx.stroke();
-
-        // dados fake do token PAP-PT2
-        const pontos = [100, 100, 101, 101, 102, 101, 103];
-        ctx.strokeStyle = '#2563eb';
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        pontos.forEach((val, i) => {
-          const x = 40 + i * 50;
-          const y = 160 - (val - 100) * 10;
-          if (i === 0) ctx.moveTo(x, y);
-          else ctx.lineTo(x, y);
-        });
-        ctx.stroke();
-
-        ctx.fillStyle = '#0f172a';
-        ctx.font = '12px system-ui';
-        ctx.fillText('Preço historico do token PAP-PT2', 32, 22);
-      }
-
-      function investirPropriedade(token) {
-        alert('compra simulada de tokens do ativo ' + token + ' ✅');
-      }
-    </script>
+    <script src="assets/js/casa1.js"></script>
   </body>
 </html>
