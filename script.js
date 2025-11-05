@@ -1,47 +1,47 @@
 // dados de exemplo; troca por fetch se quiseres vir do backend
 const offers = [
   {
-    nome: "Residencial Parque, Lisboa",
+    nome: "Bairro do ISEP, Paranhos, Porto",
     taxaAnual: 11.2,
     investidores: 143,
-    montante: 39900,
+    montante: 639900,
     progresso: 82,
     estado: "A financiar", // "Financiado" fica a vermelho
     imagem: "https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=800&q=80",
-    token: "LSB1",
+    token: "BIP1",
     linkProjeto: "projeto-residencial-parque.html"
   },
   {
-    nome: "Praça Armando Pimentel, Porto (II)",
+    nome: "Cabana Compartilhada, Paranhos, Porto",
     taxaAnual: 12.0,
     investidores: 104,
-    montante: 26600,
+    montante: 266700,
     progresso: 100,
     estado: "Financiado",
     imagem: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=800&q=80",
-    token: "PRT2",
+    token: "CCP1",
     linkProjeto: "projeto-praca-armando.html"
   },
   {
-    nome: "Rua da Portela, Nogueira (VII)",
+    nome: "Mansão do André Coelho Ribeiro, Maia, Porto",
     taxaAnual: 11.5,
     investidores: 206,
-    montante: 51300,
+    montante: 1051300,
     progresso: 100,
     estado: "Financiado",
     imagem: "https://images.unsplash.com/photo-1494526585095-c41746248156?w=800&q=80",
-    token: "BRG7",
+    token: "MAR3",
     linkProjeto: "projeto-portela-nogueira.html"
   },
   {
-    nome: "Residência Académica, Braga",
+    nome: "Residência de Projeto ISEP, Porto",
     taxaAnual: 10.4,
     investidores: 187,
-    montante: 46800,
+    montante: 800600,
     progresso: 64,
     estado: "A financiar",
     imagem: "https://images.unsplash.com/photo-1494526585095-c41746248156?w=800&q=80",
-    token: "BRG4",
+    token: "LAP1",
     linkProjeto: "projeto-residencia-academica.html"
   }
 ];

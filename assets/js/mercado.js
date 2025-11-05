@@ -6,68 +6,68 @@
 // ————————————————————————————————————————————
 const holdings = [
   {
-    token: "LSB1",
+    token: "BIP1",
     nome: "Residencial Parque, Lisboa",
     qty: 120,
-    last: 10.8,
+    last: 108.8,
     img: "https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=600&q=80"
   },
   {
-    token: "PRT2",
-    nome: "Praça Armando Pimentel, Porto (II)",
+    token: "CCP1",
+    nome: "Cabana Compartilhada, Paranhos, Porto",
     qty: 40,
-    last: 12.2,
+    last: 92.4,
     img: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=600&q=80"
   },
   {
-    token: "BRG7",
-    nome: "Rua da Portela, Nogueira (VII)",
-    qty: 0,
-    last: 8.9,
+    token: "MAR3",
+    nome: "Mansão do André Coelho Ribeiro, Maia, Porto",
+    qty: 3,
+    last: 77.6,
     img: "https://images.unsplash.com/photo-1494526585095-c41746248156?w=600&q=80"
   }
 ];
 
 const mySellOrders = [
-  { token: "LSB1", price: 11.2, qty: 20, createdAt: "2025-10-27 14:22" },
-  { token: "PRT2", price: 12.9, qty: 10, createdAt: "2025-10-30 09:11" }
+  { token: "BIP1", price: 112.2, qty: 20, createdAt: "2025-10-27 14:22" },
+  { token: "CCP1", price: 121.9, qty: 10, createdAt: "2025-10-30 09:11" }
 ];
 
 const myBuyOrders = [
-  { token: "LSB1", price: 10.4, qty: 25, createdAt: "2025-10-29 18:02" },
-  { token: "BRG7", price: 8.2, qty: 50, createdAt: "2025-11-02 12:40" }
+  { token: "BIP1", price: 103.4, qty: 25, createdAt: "2025-10-29 18:02" },
+  { token: "MAR3", price: 83.2, qty: 50, createdAt: "2025-11-02 12:40" }
 ];
 
 const markets = [
   {
-    token: "LSB1",
-    nome: "Residencial Parque, Lisboa",
+    token: "BIP1",
+    nome: "Bairro do ISEP, Paranhos, Porto",
     last: 108.8,
     high24: 111.4,
     vol24: 4320,
     img: "https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=600&q=80"
   },
   {
-    token: "PRT2",
-    nome: "Praça Armando Pimentel, Porto (II)",
+    token: "CCP1",
+    nome: "Cabana Compartilhada, Paranhos, Porto",
     last: 122.2,
     high24: 122.9,
     vol24: 1990,
     img: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=600&q=80"
   },
   {
-    token: "BRG7",
-    nome: "Rua da Portela, Nogueira (VII)",
+    token: "MAR3",
+    nome: "Mansão do André Coelho Ribeiro, Maia, Porto",
     last: 82.9,
     high24: 93.3,
     vol24: 2760,
     img: "https://images.unsplash.com/photo-1494526585095-c41746248156?w=600&q=80"
   },
   {
-    token: "BRG4",
-    nome: "Residência Académica, Braga",
+    token: "LAP1",
+    nome: "Residência de Projeto ISEP, Porto",
     last: 177.8,
-    high24: 87.1,
+    high24: 187.1,
     vol24: 1430,
     img: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80"
   }
