@@ -1,11 +1,12 @@
 // muda tema claro/escuro
 const btnTheme = document.getElementById('btnTheme');
 if (btnTheme) {
-  btnTheme.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    // nota: podes criar a classe .dark no css se quiseres outro tema
+  btnTheme.addEventListener('click', (e) => {
+    // abre o dashboard na mesma aba
+    window.location.href = 'dashboard.html';
   });
 }
+
 
 // simulação de login web3
 const btnWallet = document.getElementById('btnWallet');
