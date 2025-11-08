@@ -3,12 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contactos | CryptoEstate</title>
+    <title>Contactos | EquiHouse</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    
+    <link rel="icon" href="img/logo.png" />
   </head>
-  <body>
+  <body class="dark">
+    <div class="page-glow page-glow-1"></div>
+    <div class="page-glow page-glow-2"></div>
+
+    <!-- header -->
     <header class="topbar">
-      <div class="logo">CryptoEstate</div>
+      <div class="logo-wrap">
+        <img src="img/logo.png" alt="EquiHouse" class="logo-img" />
+        <div class="logo-text">EquiHouse</div>
+      </div>
+
       <nav class="nav">
         <a href="index.html">Início</a>
         <a href="projetos.html">Projetos</a>
@@ -16,30 +26,71 @@
         <a href="como-funciona.html">Como Funciona</a>
         <a href="contactos.html" class="active">Contactos</a>
       </nav>
-      <button id="btnTheme" class="btn">🌙</button>
+
+      <div class="actions">
+        <button class="ghost-btn" id="btnTheme" aria-label="Trocar tema">
+          <span class="dot"></span>
+        </button>
+        <button class="primary-btn" id="btnWallet">
+          <span class="icon">⬤</span>Ligar carteira
+        </button>
+      </div>
     </header>
 
-    <main class="page narrow">
-      <h1>Fala connosco</h1>
-      <form class="form" id="formContactos">
-        <label>Nome
-          <input type="text" name="nome" required />
-        </label>
-        <label>Email
-          <input type="email" name="email" required />
-        </label>
-        <label>Mensagem
-          <textarea name="mensagem" rows="5" required></textarea>
-        </label>
-        <button class="btn primary" type="submit">Enviar</button>
-      </form>
-      <p id="msgOk" class="ok" hidden>recebido. não vamos responder 🤭</p>
+    <!-- conteúdo principal -->
+    <main class="page" style="padding:60px 5vw 80px;">
+      <section class="hero" style="margin-bottom:40px;">
+        <p class="tag">Fala connosco</p>
+        <h1>Contacta a equipa EquiHouse</h1>
+        <p class="subtitle" style="max-width:720px;">
+          Estamos disponíveis para esclarecer dúvidas sobre investimentos, parcerias ou suporte técnico.
+        </p>
+      </section>
+
+      <section class="contact-grid">
+        <!-- formulário -->
+        <div class="contact-form">
+          <h2>Envia-nos uma mensagem</h2>
+          <form id="contactForm">
+            <label>Nome completo
+              <input type="text" id="nome" class="input" placeholder="O teu nome" required />
+            </label>
+            <label>Email
+              <input type="email" id="email" class="input" placeholder="teu@email.com" required />
+            </label>
+            <label>Assunto
+              <input type="text" id="assunto" class="input" placeholder="Assunto da mensagem" required />
+            </label>
+            <label>Mensagem
+              <textarea id="mensagem" class="input" rows="5" placeholder="Escreve aqui..." required></textarea>
+            </label>
+            <button type="submit" class="btn-solid">Enviar mensagem</button>
+            <p id="formStatus" class="muted" style="margin-top:10px;"></p>
+          </form>
+        </div>
+
+        <!-- contactos diretos -->
+        <div class="contact-info">
+          <h2>Contactos diretos</h2>
+          <p><strong>Email:</strong> info@equihouse.pt</p>
+          <p><strong>Telefone:</strong> +351 965 136 306</p>
+          <p><strong>Morada:</strong> ISEP - DEI - Departamento de Engenharia Informática</p>
+
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d979.7210068447702!2d-8.608230533114712!3d41.17831802167838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2465b98d7accd7%3A0xa06f7f5fecb34152!2sISEP%20-%20DEI%20-%20Departamento%20de%20Engenharia%20Inform%C3%A1tica!5e0!3m2!1spt-PT!2spt!4v1762363110663!5m2!1spt-PT!2spt" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0;border-radius:12px;"
+              ></iframe>
+          </div>
+
+          
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-      <p>© 2025 CryptoEstate</p>
+      <p>© <span id="year">2025</span> EquiHouse — Crowdfunding Imobiliário Tokenizado</p>
     </footer>
 
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/contactos.js"></script>
   </body>
 </html>

@@ -525,3 +525,112 @@ body {
   }
 }
 
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.contact-form, .contact-info {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.contact-form h2, .contact-info h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+ 
+}
+
+
+
+.input {
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  color: #fff;
+  padding: 10px 12px;
+  margin-top: 4px;
+  margin-bottom: 14px;
+  font-family: inherit;
+  resize: none;
+  
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255,255,255,0.1);
+}
+
+.map {
+  margin: 20px 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* estilo da secção da equipa */
+      .team {
+        text-align: center;
+        margin-top: 80px;
+      }
+
+      .team h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+      }
+
+      .team p {
+        color: var(--muted);
+        margin-bottom: 40px;
+      }
+
+      .team-members {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+      }
+
+      .member {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 16px;
+        padding: 20px;
+        width: 200px;
+        transition: transform 0.3s;
+      }
+
+      .member:hover {
+        transform: translateY(-5px);
+      }
+
+      .member img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+        border: 3px solid var(--accent, #00bcd4);
+      }
+
+      .member h4 {
+        margin: 0;
+        font-size: 1.1em;
+      }
+
+      .member span {
+        display: block;
+        font-size: 0.9em;
+        color: var(--muted);
+      }

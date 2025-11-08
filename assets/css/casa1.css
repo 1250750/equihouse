@@ -82,3 +82,8 @@
     grid-template-columns: 1fr;
   }
 }
+:hover.btn-solid{
+
+  cursor: pointer;
+
+}

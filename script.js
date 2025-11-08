@@ -7,7 +7,7 @@ const offers = [
     montante: 639900,
     progresso: 82,
     estado: "A financiar", // "Financiado" fica a vermelho
-    imagem: "https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=800&q=80",
+    imagem: "img/Bairro.jpg",
     token: "BIP1",
     linkProjeto: "casa1.html"
   },
@@ -18,7 +18,7 @@ const offers = [
     montante: 266700,
     progresso: 100,
     estado: "Financiado",
-    imagem: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=800&q=80",
+    imagem: "img/Cabana.jpeg",
     token: "CCP1",
     linkProjeto: "projeto-praca-armando.html"
   },
@@ -29,7 +29,7 @@ const offers = [
     montante: 1051300,
     progresso: 100,
     estado: "Financiado",
-    imagem: "https://images.unsplash.com/photo-1494526585095-c41746248156?w=800&q=80",
+    imagem: "img/mansao.webp",
     token: "MAR3",
     linkProjeto: "projeto-portela-nogueira.html"
   },
@@ -40,7 +40,7 @@ const offers = [
     montante: 800600,
     progresso: 64,
     estado: "A financiar",
-    imagem: "https://images.unsplash.com/photo-1494526585095-c41746248156?w=800&q=80",
+    imagem: "img/reidencia.jpg",
     token: "LAP1",
     linkProjeto: "projeto-residencia-academica.html"
   }

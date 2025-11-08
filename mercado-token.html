@@ -51,11 +51,9 @@
         </div>
       </section>
 
-      <!-- === gráfico tipo TradingView com fallback canvas === -->
-      <section class="chart-box" style="height: 460px; position: relative;">
+      <!-- === gráfico TradingView via iframe === -->
+      <section class="chart-box" style="height: 450px; position: relative;">
         <div id="tradingview_chart" style="width:100%; height:100%; border-radius:14px; overflow:hidden;"></div>
-        <canvas id="priceChart" width="900" height="280"
-                style="display:none; width:100%; height:auto;"></canvas>
       </section>
 
       <section class="token-grid">
@@ -98,59 +96,35 @@
       <p>© <span id="year">2025</span> EquiHouse</p>
     </footer>
 
-    <!-- script TradingView -->
-    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
     <script>
       // mapa simples: token -> símbolo público (ajusta como quiseres)
       const SYMBOLS_BY_TOKEN = {
         "ED1": "NASDAQ:AAPL",
         "LS2": "NASDAQ:MSFT",
         "BRG3": "NASDAQ:NVDA",
-        // defaults/legacy
         "LSB1": "NASDAQ:AAPL",
         "LSB2": "NASDAQ:MSFT"
       };
 
-      // função global para inicializar o gráfico (usada aqui e/ou pelo mercado.js)
-      window.initTradingView = function(token){
-        try{
-          const containerId = "tradingview_chart";
-          const container = document.getElementById(containerId);
+      // nova função: cria um iframe limpo sem nome/branding
+      window.initTradingView = function(token) {
+        const container = document.getElementById("tradingview_chart");
+        if (!container) return;
 
-          if (!container || typeof TradingView === "undefined" || !TradingView.widget) {
-            // fallback: mostra o canvas se o tv.js falhar
-            const cv = document.getElementById('priceChart');
-            if (cv) cv.style.display = 'block';
-            return;
-          }
+        const symbol = SYMBOLS_BY_TOKEN[(token || "").toUpperCase()] || "NASDAQ:AAPL";
+        const src = `https://s.tradingview.com/widgetembed/?symbol=${symbol}&interval=60&theme=dark&style=1&hide_top_toolbar=1&hide_legend=1&hide_side_toolbar=1&hide_symbol_logo=1&withdateranges=0&allow_symbol_change=0&range=7D&locale=pt`;
 
-          const symbol = SYMBOLS_BY_TOKEN[(token||"").toUpperCase()] || "NASDAQ:AAPL";
-
-          // limpar container caso se reinicialize
-          container.innerHTML = "";
-
-          new TradingView.widget({
-            width: "100%",
-            height: "100%",
-            autosize: true,
-            symbol: symbol,
-            interval: "60",                // 1h
-            timezone: "Europe/Lisbon",
-            theme: "dark",
-            style: "1",                    // candles
-            locale: "pt",
-            toolbar_bg: "#0e0e0e",
-            enable_publishing: false,
-            hide_top_toolbar: false,
-            hide_legend: false,
-            range: "7D",
-            container_id: containerId
-          });
-        }catch(e){
-          const cv = document.getElementById('priceChart');
-          if (cv) cv.style.display = 'block';
-          console.error("tradingview init error:", e);
-        }
+        // limpar container e injetar o iframe
+        container.innerHTML = `
+          <iframe 
+            src="${src}" 
+            width="100%" 
+            height="450" 
+            frameborder="0" 
+            allowfullscreen
+            style="border-radius:14px; overflow:hidden;">
+          </iframe>
+        `;
       };
     </script>
 
@@ -158,7 +132,6 @@
     <script src="assets/js/app.js"></script>
     <script src="assets/js/mercado.js"></script>
     <script>
-      // mantém a lógica existente do teu JS e garante o gráfico já aqui
       document.addEventListener('DOMContentLoaded', () => {
         if (typeof initTokenPage === 'function') initTokenPage();
 

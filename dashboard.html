@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | EquiHouse</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+   <link rel="stylesheet" href="assets/css/dashboard.css"/>
+  <link rel="icon" href="img/logo.png"/>
+
+
+</head>
+<body class="dark">
+  <!-- glows -->
+  <div class="page-glow page-glow-1"></div>
+  <div class="page-glow page-glow-2"></div>
+
+  <!-- topo (segue teu padrão) -->
+  <header class="topbar">
+    <div class="logo-wrap">
+      <img src="img/logo.png" alt="EquiHouse" class="logo-img" />
+      <div class="logo-text">EquiHouse</div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Início</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="mercado.html">Mercado Secundário</a>
+      <a href="como-funciona.html">Como Funciona</a>
+      <a href="contactos.html">Contactos</a>
+    </nav>
+    <div class="actions">
+      <button class="ghost-btn" id="btnTheme" aria-label="Trocar tema"><span class="dot"></span></button>
+      <button class="primary-btn" id="btnWallet"><span class="icon">⬤</span>Ligar carteira</button>
+    </div>
+  </header>
+
+  <!-- conteúdo -->
+  <main class="page">
+    <section class="page-head">
+      <p class="muted">Através de um dashboard intuitivo</p>
+      <h1>Dashboard</h1>
+      <p class="muted">Acompanha progresso das obras, marcos técnicos, orçamento e distribuições. Analisa investimentos, mercado, prazos e recebimentos.</p>
+    </section>
+
+    <!-- KPIs -->
+    <section class="kpis" id="kpis">
+      <div class="kpi"><div class="label">Valor investido</div><div class="value" id="kpiInvested">—</div></div>
+      <div class="kpi"><div class="label">Rendimentos recebidos</div><div class="value" id="kpiIncome">—</div></div>
+      <div class="kpi"><div class="label">Projetos ativos</div><div class="value" id="kpiActive">—</div></div>
+      <div class="kpi"><div class="label">Yield média</div><div class="value" id="kpiApy">—</div></div>
+    </section>
+
+    <div class="dash-grid">
+      <!-- gráfico melhorado -->
+      <section class="card">
+        <h3>Evolução & Distribuições</h3>
+        <div class="toolbar">
+          <select id="selRange">
+            <option value="6">Últimos 6 meses</option>
+            <option value="12" selected>Últimos 12 meses</option>
+            <option value="24">Últimos 24 meses</option>
+          </select>
+          <button class="btn" id="btnExport">Exportar CSV</button>
+        </div>
+
+        <div class="chart-wrap">
+          <canvas id="incomeChart"></canvas>
+          <div id="tt" class="tooltip"></div>
+        </div>
+
+        <div class="legend" id="legend">
+          <div class="item" data-series="line"><span class="box" style="background:rgba(56,189,248,.9)"></span>Rendimento mensal</div>
+          <div class="item" data-series="bars"><span class="box" style="background:rgba(59,130,246,.7)"></span>Distribuições</div>
+          <div class="item" data-series="area"><span class="box" style="background:rgba(56,189,248,.35)"></span>Tendência</div>
+        </div>
+        <p class="muted" style="margin-top:6px;">Os contratos inteligentes executam desbloqueios e pagamentos automaticamente.</p>
+      </section>
+
+      <!-- marcos técnicos -->
+      <section class="card">
+        <h3>Marcos técnicos</h3>
+        <div id="milestonesList" style="display:flex; flex-direction:column; gap:12px;"></div>
+      </section>
+
+      <!-- tabela de projetos -->
+      <section class="card" style="grid-column: 1 / -1;">
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+          <h3>Os meus investimentos</h3>
+          <div class="toolbar">
+            <input id="searchInvest" class="input" placeholder="procurar por nome/código…"/>
+            <select id="statusInvest">
+              <option value="">Todos</option>
+              <option value="A financiar">A financiar</option>
+              <option value="Financiado">Financiado</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="overflow:auto;">
+          <table class="table" id="tableInvest">
+            <thead>
+              <tr>
+                <th>Projeto</th>
+                <th>Token</th>
+                <th>Taxa Anual</th>
+                <th>Montante</th>
+                <th>Progresso</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyInvest"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year">2025</span> EquiHouse</p>
+  </footer>
+
+  <script src="assets/js/dashboard.js"></script>
+
+</body>
+</html>

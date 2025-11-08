@@ -7,24 +7,24 @@
 const holdings = [
   {
     token: "BIP1",
-    nome: "Residencial Parque, Lisboa",
+    nome: "Bairro do ISEP, Paranhos, Porto",
     qty: 120,
     last: 108.8,
-    img: "https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=600&q=80"
+    img: "img/Bairro.jpg"
   },
   {
     token: "CCP1",
     nome: "Cabana Compartilhada, Paranhos, Porto",
     qty: 40,
     last: 92.4,
-    img: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=600&q=80"
+    img: "img/cabana.jpeg"
   },
   {
     token: "MAR3",
     nome: "Mansão do André Coelho Ribeiro, Maia, Porto",
     qty: 3,
     last: 77.6,
-    img: "https://images.unsplash.com/photo-1494526585095-c41746248156?w=600&q=80"
+    img: "img/mansao.webp"
   }
 ];
 
@@ -45,7 +45,7 @@ const markets = [
     last: 108.8,
     high24: 111.4,
     vol24: 4320,
-    img: "https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=600&q=80"
+    img: "img/Bairro.jpg"
   },
   {
     token: "CCP1",
@@ -53,7 +53,7 @@ const markets = [
     last: 122.2,
     high24: 122.9,
     vol24: 1990,
-    img: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=600&q=80"
+    img: "img/Cabana.jpeg"
   },
   {
     token: "MAR3",
@@ -61,7 +61,7 @@ const markets = [
     last: 82.9,
     high24: 93.3,
     vol24: 2760,
-    img: "https://images.unsplash.com/photo-1494526585095-c41746248156?w=600&q=80"
+    img: "img/mansao.webp"
   },
   {
     token: "LAP1",
@@ -69,7 +69,7 @@ const markets = [
     last: 177.8,
     high24: 187.1,
     vol24: 1430,
-    img: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80"
+    img: "img/reidencia.jpg"
   }
 ];
 
